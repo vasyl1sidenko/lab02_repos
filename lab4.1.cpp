@@ -10,36 +10,43 @@ using namespace std;
 
 int main()
 {
-    int k, N, i;
+    int N, i;
     double S;
-    cout << "k = "; cin >> k;
-    cout << "N = "; cin >> N;
+
+    cout << "N = ";
+    cin >> N;
+
     S = 0;
-    i = k;
+    i = 1;
     while (i <= N)
     {
-        S += sqrt(1 + pow(cos(i), 2) * sin(i)) / (1 + pow(sin(i), 2) * cos(i));
+       S += sqrt(1 + pow(cos(sin(i)), 2)) / (1 + pow(sin(cos(i)), 2));
         i++;
     }
     cout << S << endl;
+
     S = 0;
-    i = k;
-    do {
-        S += sqrt(1 + pow(cos(i), 2) * sin(i)) / (1 + pow(sin(i), 2) * cos(i));
+    i = 1;
+    do
+    {
+        S += sqrt(1 + pow(cos(sin(i)), 2)) / (1 + pow(sin(cos(i)), 2));
         i++;
     } while (i <= N);
     cout << S << endl;
+
     S = 0;
-    for (i=k; i <= N; i++)
+    for (i = 1; i <= N; i++)
     {
-        S += sqrt(1 + pow(cos(i), 2) * sin(i)) / (1 + pow(sin(i), 2) * cos(i));
+        S += sqrt(1 + pow(cos(sin(i)), 2)) / (1 + pow(sin(cos(i)), 2));
     }
     cout << S << endl;
+
     S = 0;
-    for (i=N; i >= k; i--)
+    for (i = N; i >= 1; i--)
     {
-        S += sqrt(1 + pow(cos(i), 2) * sin(i)) / (1 + pow(sin(i), 2) * cos(i));
+        S += sqrt(1 + pow(cos(sin(i)), 2)) / (1 + pow(sin(cos(i)), 2));
     }
     cout << S << endl;
+
     return 0;
 }
